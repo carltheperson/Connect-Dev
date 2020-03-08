@@ -1,10 +1,13 @@
 import React from 'react';
-import './App.css';
+import './styling/App.css';
+
+// Components
+import MainSection from "./components/MainSection";
 
 function App() {
   return (
     <div className="App">
-
+      <MainSection/>
     </div>
   );
 }

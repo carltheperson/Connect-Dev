@@ -1,0 +1,63 @@
+body {
+  background-color: #014A5B;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+h1, h2 {
+  font-family: 'Viga', sans-serif;
+  color: #E3FE8F;
+}
+
+p {
+  color: #E3FE8F;
+}
+
+/* Main section */
+  #main-section {
+    margin-left: 10%;
+  }
+
+  #logo-text {
+    font-size: 96px;
+    margin-bottom: 10px;
+  }
+
+  #explainer-text {
+    font-size: 36px;
+    margin-top: 10px;
+    width: 75%;
+  }
+
+
+/* Feture box */
+  #fetured-dev-box {
+    width: 80%;
+    border: 2px #E3FE8F solid;
+    padding: 15px;
+  }
+
+  #feture-title {
+    font-size: 48px;
+    margin: 5px 0 0 0;
+  }
+
+  
+  .hashtag {
+    color: #FFD420;
+  }
+  
+  #feture-flex {
+    display: flex;
+    align-items: stretch;
+  }
+  
+  #profile-picture {
+    border-radius: 50%;
+    border: 2px #E3FE8F solid;
+    flex: 1;
+  }
+
+  #feture-name-bio {
+    flex: 3;
+    padding-left: 15px;
+  }
