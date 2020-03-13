@@ -4,6 +4,7 @@ import './styling/App.css';
 // Components
 import MainSection from "./components/MainSection";
 import TwitterSection from './components/TwitterSection';
+import GithubSection from './components/GithubSection';
 
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
     <div className="App">
       <MainSection/>
       <TwitterSection/>
+      <GithubSection/>
     </div>
   );
 }

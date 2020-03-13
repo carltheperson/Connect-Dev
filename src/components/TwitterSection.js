@@ -2,17 +2,16 @@ import React from 'react'
 
 export default function TwitterSection() {
     return (
-        <div id="twitter-section">
+        <div id="twitter-section" className="section">
             <h1>Twitter</h1>
             <form>
                 <label for="twitter-handle-input">
                     <h3>Your Twitter handle</h3>
                 </label>
                 <div>
-                    <div id="at-symbol"><p>@</p></div> <input type="text" name="handle" id="twitter-handle-input"/>
+                    <div id="at-symbol"><p>@</p></div> <input type="text" name="handle" id="twitter-handle-input" className="section-input"/>
                 </div>
-                <button id="twitter-btn">Connect</button>
-
+                <button id="twitter-btn" className="section-btn">Connect</button>
             </form>
         </div>
     )

@@ -63,38 +63,55 @@ p {
     padding-left: 15px;
   }
 
+/* Sections */
+.section {
+  padding: 50px 0 50px 100px;
+}
+
+.section-btn {
+  font-size: 45px;
+  font-family: 'Viga', sans-serif;
+  margin-top: 20px;
+  text-decoration: none;
+  border: none;
+  border-radius: 20px;
+  padding: 5px 15px;
+}
+
+.section h1 {
+  font-size: 72px;
+  margin: 0;
+}
+
+.section h3 {
+  font-size: 45px;
+  margin: 20px 0;
+  font-weight: 300;
+}
+
+.section-input {
+  border-radius: 30px;
+  width: 355px;
+  height: 70px;
+  font-size: 40px;
+  font-family: 'Ubuntu', sans-serif;
+  padding-left: 15px;
+}
+
 /* Twitter section */
   #twitter-section {
     background-color: white;
-    padding-left: 100px;
-    padding-top: 50px;
-    margin-top: 25px;
   }
 
   #twitter-section h1, #twitter-section h3 {
     color: #1DA1F2;
   }
 
-  #twitter-section h1 {
-    font-size: 72px;
-    margin: 0;
-  }
-
-  #twitter-section h3 {
-    font-size: 45px;
-    margin: 20px 0;
-    font-weight: 300;
-  }
-
   #twitter-handle-input {
     border: 4px #1DA1F2 solid;
-    border-radius: 30px;
-    width: 300px;
-    height: 70px;
-    padding-left: 70px;
-    font-size: 40px;
     color: #1DA1F2;
-    font-family: 'Ubuntu', sans-serif;
+    padding-left: 70px;
+    width: 300px;
   }
 
   #at-symbol {
@@ -117,13 +134,17 @@ p {
   #twitter-btn {
     background-color: #1DA1F2;
     color: white;
-    font-size: 45px;
-    font-family: 'Viga', sans-serif;
-    margin-top: 20px;
-    text-decoration: none;
-    border: none;
-    border-radius: 20px;
-    padding: 5px 15px;
   }
 
+/* Github section */
+#github-section {
+  background-color: #323131;
+}
 
+#github-section h1, h3 {
+  color: white;
+}
+
+#github-username-input {
+  border: black 3px solid;
+}
