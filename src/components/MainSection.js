@@ -1,7 +1,5 @@
 import React from 'react';
-import FeturedDevBox from './FeturedDevBox';
-
-
+import FeturedDevBox from './FeaturedDevBox';
 
 export default function MainSection() {
     return (
