@@ -169,3 +169,61 @@ p {
 #github-username-input {
   border: black 3px solid;
 }
+
+/* Connected screen */
+.connected-container {
+  margin-left: -100px;
+}
+
+.connected-screen { 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.connected-btn, .connected-explainer {
+  opacity: 0.0;
+  animation-name: fade;
+  animation-duration: 2s;
+  animation-delay: 0.25s;
+  animation-fill-mode: forwards;
+}
+
+.connected-text, .connected-with {
+  text-align: center;
+  font-size: 75px;
+  margin: 10px;
+  animation-name: zoom;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes zoom {
+  0% {font-size: 50px; opacity: 0.3;}
+  100% {font-size: 60px; opacity: 1;}
+}
+
+@keyframes fade {
+  0% {opacity: 0.0;}
+  100% {opacity: 1.0;}
+}
+
+/* Twitter connected screen */
+.twitter-connected .connected-text,
+.twitter-connected .connected-with,
+.twitter-connected .connected-explainer {
+  color: #1DA1F2;
+}
+
+.twitter-connected .connected-btn {
+  background-color: #1DA1F2;
+  color: white;
+}
+
+/* Github connected screen */
+.github-connected .connected-text,
+.github-connected .connected-with,
+.github-connected .connected-explainer {
+  color: white;
+}
+
