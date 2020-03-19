@@ -3,39 +3,25 @@ import axios from "axios";
 
 import Config from "../Config.js";
 
-import icon from "../styling/res/twitter.svg";
+export default function ConnectSection(props) {
 
-export default function TwitterSection() {
+    const set = props.settings;
 
     const [field, setField] = useState();
     const [connectedTo, setConnectedTo] = useState({});
-
-
-    function updateField(event) {
-        setField(event.target.value);
-    }
-
-    function connect(event) {
-        event.preventDefault();
-        axios.post(`http://localhost:${Config.serverPort}/api/connect/twitter/${field}`)
-            .then((response) => {
-                setConnectedTo(response.data);
-            });
-    }
 
     function getConnectScreen() {
         if (!connectedTo.personConnected || connectedTo.errorMsg) {
             return (
                 <form onSubmit={connect}>
-                    <label htmlFor="twitter-handle-input">
-                        <h3>Your Twitter handle</h3>
+                    <label htmlFor={`${set.name}-${set.usernameName}-input`}>
+                    <h3>Your {set.displayName} {set.usernameName}</h3>
                     </label>
                     <div>
-                        <div id="at-symbol"><p>@</p>
-                        </div>
-                        <input type="text" name="handle" id="twitter-handle-input" className="section-input" onChange={updateField} />
+                        {set.specialInputField}
+                        <input type="text" name={set.usernameName} id={`${set.name}-${set.usernameName}-input`} className="section-input" onChange={updateField} />
                     </div>
-                    <button id="twitter-btn" className="section-btn">Connect</button>
+                    <button id={`${set.name}-btn`} className="section-btn">Connect</button>
                     <p>{connectedTo.errorMsg ? connectedTo.errorMsg : ""}</p>
                 </form>
             );
@@ -43,11 +29,11 @@ export default function TwitterSection() {
         } else {
 
             const goToLink = () => {
-                window.open(`https://github.com/${connectedTo.personConnected}`, "__blank");
+                window.open(`https://${set.name}.com/${connectedTo.personConnected}`, "__blank");
             }
 
             return (
-                <div className="connected-container twitter-connected">
+                <div className={`connected-container ${set.name}-connected`}>
                     <div className="connected-screen">
                         <h4 className="connected-text">You connected width</h4>
                         <h4 className="connected-with">{connectedTo.personConnected}</h4>
@@ -59,13 +45,25 @@ export default function TwitterSection() {
         }
     }
 
+    function updateField(event) {
+        setField(event.target.value);
+    }
+
+    function connect(event) {
+        event.preventDefault();
+        axios.post(`http://localhost:${Config.serverPort}/api/connect/${set.name}/${field}`)
+            .then((response) => {
+                setConnectedTo(response.data);
+            });
+    }
+
 
     return (
-        <div id="twitter-section" className="section">
+        <div id={`${set.name}-section`} className="section">
             <div className="section-icon-container">
-                <img src={icon} alt="" className="section-icon" id="twitter-icon" />
+                <img src={set.icon} alt="" className="section-icon" id={`${set.name}-icon`} />
             </div>
-            <h1>Twitter</h1>
+            <h1>{set.displayName}</h1>
             {getConnectScreen()}
         </div>
     )

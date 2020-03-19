@@ -4,16 +4,14 @@ import './styling/App.css';
 
 // Components
 import MainSection from "./components/MainSection";
-import TwitterSection from './components/TwitterSection';
-import GithubSection from './components/GithubSection';
+import Sections from './components/Sections';
 
 
 function App() {
   return (
     <div className="App">
       <MainSection/>
-      <TwitterSection/>
-      <GithubSection/>
+      <Sections/>
     </div>
   );
 }
