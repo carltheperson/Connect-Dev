@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import axios from "axios";
 
-import Config from "../Config.js";
-
+import Config from "../Config";
 
 function styleHashtags(bio) {
     return bio.split(" ").map((word, i) => {
@@ -18,12 +17,12 @@ export default function FeaturedDevBox() {
 
     // Get name and bio then image
     (() => {
-        axios.get(`http://localhost:${Config.serverPort}/api/feature-name-and-bio `).then((response) => {
+        axios.get(`http://${Config.hostname}/api/feature-name-and-bio `).then((response) => {
             setName(response.data.name);
             setBio(response.data.bio);
         });
 
-        axios.get(`http://localhost:${Config.serverPort}/api/feature-image`, {
+        axios.get(`http://${Config.hostname}/api/feature-image`, {
             responseType: 'arraybuffer'
         }).then((response) => {
             setImage(Buffer.from(response.data, 'binary').toString('base64'));

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from "axios";
 
-import Config from "../Config.js";
+import Config from "../Config";
 
 export default function ConnectSection(props) {
 
@@ -9,20 +9,29 @@ export default function ConnectSection(props) {
 
     const [field, setField] = useState();
     const [connectedTo, setConnectedTo] = useState({});
+    const agreeToFeture = useState({checked: true})
 
     function getConnectScreen() {
         if (!connectedTo.personConnected || connectedTo.errorMsg) {
             return (
                 <form onSubmit={connect}>
                     <label htmlFor={`${set.name}-${set.usernameName}-input`}>
-                    <h3>Your {set.displayName} {set.usernameName}</h3>
+                        <h3>Your {set.displayName} {set.usernameName}</h3>
                     </label>
                     <div>
                         {set.specialInputField}
                         <input type="text" name={set.usernameName} id={`${set.name}-${set.usernameName}-input`} className="section-input" onChange={updateField} />
                     </div>
                     <button id={`${set.name}-btn`} className="section-btn">Connect</button>
-                    <p>{connectedTo.errorMsg ? connectedTo.errorMsg : ""}</p>
+
+                    { (set.name === "twitter") &&
+                    <label className="checkbox-container">
+                        <p id="checkbox-text"><span>Give me a chance to become featured developer of the day.</span></p>
+                        <input type="checkbox" defaultChecked={agreeToFeture}/>
+                        <span className="checkmark"></span>
+                    </label>
+                    }
+                    <p id={`error-${set.name}`}>{connectedTo.errorMsg ? connectedTo.errorMsg : ""}</p>
                 </form>
             );
 
@@ -51,7 +60,7 @@ export default function ConnectSection(props) {
 
     function connect(event) {
         event.preventDefault();
-        axios.post(`http://localhost:${Config.serverPort}/api/connect/${set.name}/${field}`)
+        axios.post(`http://${Config.hostname}/api/connect/`, {website: set.name, username: field, feture: agreeToFeture})
             .then((response) => {
                 setConnectedTo(response.data);
             });
