@@ -10,7 +10,7 @@ export default function Sections() {
         name: "twitter",
         displayName: "Twitter",
         usernameName: "handle",
-        specialInputField: <div id="at-symbol"><p>@</p></div>,
+        specialInputField: <div className="at-symbol"><p>@</p></div>,
         icon: twitterIcon
     }
 

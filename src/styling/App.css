@@ -31,7 +31,6 @@ p {
     width: 75%;
   }
 
-
 /* feature box */
   #featured-dev-box {
     width: 80%;
@@ -47,6 +46,10 @@ p {
   
   .hashtag {
     color: #FFD420;
+  }
+
+  .tag {
+    color: cyan;
   }
   
   #feature-flex {
@@ -73,17 +76,6 @@ p {
 .section {
   padding: 50px 0 50px 100px;
 }
-
-.section-btn {
-  font-size: 45px;
-  font-family: 'Viga', sans-serif;
-  margin-top: 20px;
-  text-decoration: none;
-  border: none;
-  border-radius: 20px;
-  padding: 5px 15px;
-}
-
 .section h1 {
   font-size: 72px;
   margin: 0;
@@ -95,7 +87,28 @@ p {
   font-weight: 300;
 }
 
-.section-input {
+.section .icon-container {
+  position: relative;
+}
+
+.section .icon {
+  width: 80px;
+  position: absolute;
+  right: 30px;
+  top: -15px;
+}
+
+.section-btn {
+  font-size: 45px;
+  font-family: 'Viga', sans-serif;
+  margin-top: 20px;
+  text-decoration: none;
+  border: none;
+  border-radius: 20px;
+  padding: 5px 15px;
+}
+
+.connectform .input {
   border-radius: 30px;
   width: 355px;
   height: 70px;
@@ -104,34 +117,38 @@ p {
   padding-left: 15px;
 }
 
-.section-icon-container {
-  position: relative;
-}
 
-.section-icon {
-  width: 80px;
-  position: absolute;
-  right: 30px;
-  top: -15px;
+.connectform .error-msg {
+  animation-name: fade;
+  animation-duration: 1s;
 }
 
 /* Twitter section */
-  #twitter-section {
+.twitter-section {
     background-color: white;
   }
 
-  #twitter-section h1, #twitter-section h3, #error-twitter {
+  .twitter-section h1, .twitter-section h3, .connectform-twitter .error-msg {
     color: #1DA1F2;
   }
 
-  #twitter-handle-input {
+  .connectform-twitter .input {
     border: 4px #1DA1F2 solid;
     color: #1DA1F2;
     padding-left: 70px;
     width: 300px;
   }
 
-  #at-symbol {
+  .connectform-twitter .section-btn {
+    background-color: #1DA1F2;
+    color: white;
+  }
+  
+  .twitter-section icon {
+    fill: #1DA1F2 !important;
+  }
+  
+  .at-symbol {
     position: absolute;
     height: 70px;
     width: 60px;
@@ -141,34 +158,84 @@ p {
 
   }
 
-  #at-symbol p {
+  .at-symbol p {
     margin: 0;
     color: white;  
     font-size: 55px;
     padding-left: 5px;
   }
+/* Github section */
+  .github-section {
+    background-color: #323131;
+  }
 
-  #twitter-btn {
-    background-color: #1DA1F2;
+  .github-section h1, h3, .connectform-github .error-msg {
     color: white;
   }
 
-  #twitter-icon {
-    fill: #1DA1F2 !important;
-  }
-
-/* Github section */
-#github-section {
-  background-color: #323131;
+.connectform-github .input {
+  border: black 3px solid;
 }
 
-#github-section h1, h3, #error-github {
+/* Connected screen */
+.connected {
+  margin-left: -100px;
+}
+
+.connected .screen { 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.connected .btn, .connected .explainer {
+  opacity: 0.0;
+  animation-name: fade;
+  animation-duration: 2s;
+  animation-delay: 0.25s;
+  animation-fill-mode: forwards;
+}
+
+.connected .text, .connected .with {
+  text-align: center;
+  font-size: 75px;
+  margin: 10px;
+  animation-name: zoom;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes zoom {
+  0% {font-size: 50px; opacity: 0.3;}
+  100% {font-size: 60px; opacity: 1;}
+}
+
+@keyframes fade {
+  0% {opacity: 0.0;}
+  100% {opacity: 1.0;}
+}
+
+/* Twitter connected screen */
+.twitter-connected .text,
+.twitter-connected .with,
+.twitter-connected .explainer {
+  color: #1DA1F2;
+}
+
+.twitter-connected .btn {
+  background-color: #1DA1F2;
   color: white;
 }
 
-#github-username-input {
-  border: black 3px solid;
+/* Github connected screen */
+.github-connected .text,
+.github-connected .with,
+.github-connected .explainer {
+  color: white;
 }
+
+
+
 
 /* Checkbox  https://www.w3schools.com/howto/howto_css_custom_checkbox.asp*/
 .checkbox-container {
@@ -228,61 +295,3 @@ p {
 #checkbox-text span {
   vertical-align: middle;
 }
-
-/* Connected screen */
-.connected-container {
-  margin-left: -100px;
-}
-
-.connected-screen { 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.connected-btn, .connected-explainer {
-  opacity: 0.0;
-  animation-name: fade;
-  animation-duration: 2s;
-  animation-delay: 0.25s;
-  animation-fill-mode: forwards;
-}
-
-.connected-text, .connected-with {
-  text-align: center;
-  font-size: 75px;
-  margin: 10px;
-  animation-name: zoom;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-}
-
-@keyframes zoom {
-  0% {font-size: 50px; opacity: 0.3;}
-  100% {font-size: 60px; opacity: 1;}
-}
-
-@keyframes fade {
-  0% {opacity: 0.0;}
-  100% {opacity: 1.0;}
-}
-
-/* Twitter connected screen */
-.twitter-connected .connected-text,
-.twitter-connected .connected-with,
-.twitter-connected .connected-explainer {
-  color: #1DA1F2;
-}
-
-.twitter-connected .connected-btn {
-  background-color: #1DA1F2;
-  color: white;
-}
-
-/* Github connected screen */
-.github-connected .connected-text,
-.github-connected .connected-with,
-.github-connected .connected-explainer {
-  color: white;
-}
-

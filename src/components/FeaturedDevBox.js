@@ -3,9 +3,10 @@ import axios from "axios";
 
 import Config from "../Config";
 
-function styleHashtags(bio) {
+function styleHashtagsAndTags(bio) {
     return bio.split(" ").map((word, i) => {
         if (word.charAt(0) === "#") return <span className="hashtag" key={i}>{word}</span>;
+        if (word.charAt(0) === "@") return <span className="tag" key={i}>{word}</span>;
         return word;
     }).reduce((prev, curr) => [prev, " ", curr]);
 }
@@ -38,7 +39,7 @@ export default function FeaturedDevBox() {
                 {image && <img id="profile-picture" src={`data:image/jpeg;base64,${image}`} alt="" />}
                 <div id="feature-name-bio">
                     <h2 id="feature-name">{name}</h2>
-                    <p id="feature-bio">{styleHashtags(bio)}</p>
+                    <p id="feature-bio">{styleHashtagsAndTags(bio)}</p>
                 </div>
             </div>
         </div>
