@@ -1,5 +1,5 @@
 const Config = {
-    hostname: "10.0.0.18:4000",
+    hostname: "192.168.1.9:4000",
     apiPort: 4000
 }
 

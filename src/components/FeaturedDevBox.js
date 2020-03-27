@@ -3,6 +3,8 @@ import axios from "axios";
 
 import Config from "../Config";
 
+import twitterIcon from "../styling/res/twitter_dark_blue.svg";
+
 function styleHashtagsAndTags(bio) {
     return bio.split(" ").map((word, i) => {
         if (word.charAt(0) === "#") return <span className="hashtag" key={i}>{word}</span>;
@@ -15,8 +17,18 @@ export default function FeaturedDevBox() {
     const [name, setName] = useState("");
     const [bio, setBio] = useState("");
     const [image, setImage] = useState();
+    const [hover, setHover] = useState(null);
 
-    // Get name and bio then image
+    const toggleHover = () => {setHover(!hover)};
+    const getHoverClass = () => {
+        if(hover == null) return "start-hover";
+        if(hover == false) return "not-hovering"
+        return "hovering";
+    }
+    const visitFeature = () => {
+        window.open(`https://twitter.com/${name}`, "__blank");
+    }
+
     (() => {
         axios.get(`http://${Config.hostname}/api/feature-name-and-bio `).then((response) => {
             setName(response.data.name);
@@ -34,6 +46,14 @@ export default function FeaturedDevBox() {
 
     return (
         <div id="featured-dev-box">
+            <div id="feature-link-container" className={getHoverClass()}
+                onMouseEnter={toggleHover}
+                onMouseLeave={toggleHover}
+                onClick={visitFeature}>
+                <p id="feature-visit-text">Visit Twitter profile</p>
+                <img src={twitterIcon} id="feature-icon" alt="" />
+            </div>
+            
             <h2 id="feature-title">Featured dev of the day</h2>
             <div id="feature-flex">
                 {image && <img id="profile-picture" src={`data:image/jpeg;base64,${image}`} alt="" />}
