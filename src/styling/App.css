@@ -14,13 +14,36 @@ p {
   font-size: 20px;
 }
 
+/* Pages */
+.page {
+  padding: 0 5%;
+}
+
+.page .logo-text {
+  margin-top: 40px;
+}
+
+.page p {
+  font-size: 30px;
+  margin-top: 5px;
+}
+
+.page a {
+  color: cyan;
+}
+
+.page h2 {
+  font-size: 38px;
+  margin-bottom: 5px;
+}
+
 /* Main section */
   #main-section {
     margin-left: 10%;
     margin-bottom: 80px;
   }
 
-  .logo-text {
+  .title {
     font-size: 96px;
     margin-bottom: 10px;
   }
@@ -302,7 +325,7 @@ p {
   align-content: space-around;
   align-items: center;
   justify-content: space-between;
-  width: 70%;
+  width: 85%;
   text-align: center;
 }
 

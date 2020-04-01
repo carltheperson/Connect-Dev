@@ -7,6 +7,7 @@ import MainSection from "./components/MainSection";
 import Sections from "./components/Sections";
 import Header from "./components/Header";
 import HowItWorks from "./components/HowItWorks";
+import About from './components/About';
 
 
 function App() {
@@ -22,6 +23,10 @@ function App() {
 
         <Route exact path="/how-it-works">
           <HowItWorks/>
+        </Route>
+
+        <Route exact path="/about">
+          <About/>
         </Route>
       </div>
     </Router>
