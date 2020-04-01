@@ -6,7 +6,7 @@ import Config from "../Config";
 import twitterIcon from "../styling/res/twitter_dark_blue.svg";
 
 function styleHashtagsAndTags(bio) {
-    return bio.split(" ").map((word, i) => {
+    return bio.replace(/(\r\n|\n|\r)/gm, " ").split(" ").map((word, i) => {
         if (word.charAt(0) === "#") return <span className="hashtag" key={i}>{word}</span>;
         if (word.charAt(0) === "@") return <span className="tag" key={i}>{word}</span>;
         return word;
@@ -21,8 +21,8 @@ export default function FeaturedDevBox() {
 
     const toggleHover = () => {setHover(!hover)};
     const getHoverClass = () => {
-        if(hover == null) return "start-hover";
-        if(hover == false) return "not-hovering"
+        if(hover === null) return "start-hover";
+        if(hover === false) return "not-hovering"
         return "hovering";
     }
     const visitFeature = () => {
