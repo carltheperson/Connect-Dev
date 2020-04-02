@@ -8,6 +8,7 @@ import Sections from "./components/Sections";
 import Header from "./components/Header";
 import HowItWorks from "./components/HowItWorks";
 import About from './components/About';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -28,6 +29,8 @@ function App() {
         <Route exact path="/about">
           <About/>
         </Route>
+
+        <Footer/>
       </div>
     </Router>
   );
