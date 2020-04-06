@@ -1,3 +1,7 @@
+/* Font sizing */
+@media screen and (min-width: 0px) {html {font-size: 10px;}}
+@media screen and (max-width: 768px) {html {font-size: 8px;}}
+
 body {
   background-color: #014A5B;
   font-family: 'Ubuntu', sans-serif;
@@ -11,12 +15,15 @@ h1, h2 {
 
 p {
   color: #E3FE8F;
-  font-size: 20px;
+  font-size: 2rem;
 }
 
 /* Pages */
 .page {
-  padding: 0 5%;
+  padding: 0 10%;
+  position: relative;
+  min-height: 60vh;
+  margin-bottom: 40px;
 }
 
 .page .logo-text {
@@ -24,7 +31,7 @@ p {
 }
 
 .page p {
-  font-size: 30px;
+  font-size: 3rem;
   margin-top: 5px;
 }
 
@@ -33,7 +40,7 @@ p {
 }
 
 .page h2 {
-  font-size: 38px;
+  font-size: 3.8rem;
   margin-bottom: 5px;
 }
 
@@ -43,12 +50,17 @@ p {
   box-shadow: 0px 0px 14px 1px rgba(0,0,0,0.25);
   text-align: center;
   padding: 0 20px 45px;
+
 }
 
 .footer p {
   margin-top: 0;
   padding-top: 30px;
-  font-size: 20px;
+  font-size: 2rem;
+}
+
+.footer .smaller {
+  font-size: 1.8rem;
 }
 
 .footer img {
@@ -63,6 +75,10 @@ p {
   width: 350px;
   margin: auto;
   margin-top: 20px;
+}
+
+.footer .link-container a {
+  font-size: 1.75rem;
 }
 
 .footer a {
@@ -82,26 +98,33 @@ p {
   }
 
   .title {
-    font-size: 96px;
+    font-size: 7rem;
     margin-bottom: 10px;
   }
 
   .explainer-text {
-    font-size: 36px;
+    font-size: 3rem;
     margin-top: 10px;
     width: 75%;
+  }
+
+  @media only screen and (min-width: 1900px) {
+    #main-section {
+      margin-left: 250px;
+    }
   }
 
 /* feature box */
   #featured-dev-box {
     width: 80%;
+    max-width: 1500px;
     border: 2px #E3FE8F solid;
     padding: 15px;
     position: relative;
   }
   
   #feature-title {
-    font-size: 48px;
+    font-size: 4.8rem;
     margin: 5px 0 0 0;
   }
   
@@ -124,6 +147,7 @@ p {
     flex: 1;
     object-fit:cover;
     width: 30%;
+    height: 30%;
   }
   
   #feature-name-bio {
@@ -132,7 +156,13 @@ p {
   }
   
   #feature-name {
-    font-size: 32px;
+    margin-bottom: 10px;
+    font-size: 3.2rem;
+  }
+  
+  #feature-bio {
+    font-size: 2.75rem;
+    margin-top: 10px;
   }
   
   #feature-icon {
@@ -142,6 +172,10 @@ p {
     width: 45px;
   }
   
+  #feature-title {
+    width: 90%;
+  }
+
   /* Feature visit link */
   #feature-visit-text {
     position: absolute;
@@ -150,7 +184,7 @@ p {
     top:-5px;
     text-decoration: none;
     color: #014A5B;
-    font-size: 22px;
+    font-size: 2.2rem;
     font-weight: bolder;
   }
   #feature-link-container {
@@ -164,6 +198,7 @@ p {
     cursor:pointer;
   }
   .hovering {
+    box-shadow: 0px 0px 14px 1px rgba(0,0,0,0.25);
    animation: in 0.5s;
    width: 285px;
   }
@@ -183,18 +218,36 @@ p {
     100% {width: 60px;}
   }
 
+  @media only screen and (max-width: 768px) {
+    #feature-flex {
+      display: block;
+    }
+
+    #profile-picture {
+      display: block;
+      margin: auto;
+      width: 65%;
+      margin-top: 15px;
+    }
+
+    #feature-link-container {
+      display: none;
+    }
+
+  }
+
 
 /* Sections */
 .section {
   padding: 50px 0 50px 100px;
 }
 .section h1 {
-  font-size: 72px;
+  font-size: 7.2rem;
   margin: 0;
 }
 
 .section h3 {
-  font-size: 45px;
+  font-size: 4.5rem;
   margin: 20px 0;
   font-weight: 300;
 }
@@ -211,7 +264,7 @@ p {
 }
 
 .section-btn {
-  font-size: 45px;
+  font-size: 3.5rem;
   font-family: 'Viga', sans-serif;
   margin-top: 20px;
   text-decoration: none;
@@ -223,16 +276,65 @@ p {
 .connectform .input {
   border-radius: 30px;
   width: 355px;
-  height: 70px;
-  font-size: 40px;
+  height: 6rem;
+  font-size: 3.5rem;
   font-family: 'Ubuntu', sans-serif;
+  padding: 1px;
   padding-left: 15px;
 }
-
 
 .connectform .error-msg {
   animation-name: fade;
   animation-duration: 1s;
+}
+
+@media only screen and (max-width: 768px) {
+  .section {
+    padding: 50px 5%;
+  }
+
+  .section .icon {
+    display: none;
+  }
+
+  .section h1 {
+    text-align: center;
+  }
+
+  .connectform-twitter .input-container {
+    width: 85%;
+  }
+
+  .connectform-twitter .input {
+    width: calc(100% - 70px) !important;    
+  }
+  
+  .connectform-github .input {
+    width: 75%;
+    
+  }
+
+  .connectform form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .connectform .checkbox-container {
+    text-align: left;
+    margin: 0;
+    margin-top: 10px;
+  }
+
+  .connectform .checkbox-container p {
+    margin-top: 5px;
+  }
+
+  .error-msg {
+    margin-top: 10px;
+  }
 }
 
 /* Twitter section */
@@ -247,7 +349,7 @@ p {
   .connectform-twitter .input {
     border: 4px #1DA1F2 solid;
     color: #1DA1F2;
-    padding-left: 70px;
+    padding-left: 6.5rem;
     width: 300px;
   }
 
@@ -258,19 +360,20 @@ p {
   
   .at-symbol {
     position: absolute;
-    height: 70px;
-    width: 60px;
+    height: calc(6rem + 2px);
+    width: 6rem;
     background-color: #1DA1F2;
     border-radius: 30px 0 0 30px;
     border: 4px #1DA1F2 solid;
-
   }
 
   .at-symbol p {
     margin: 0;
     color: white;  
-    font-size: 55px;
-    padding-left: 5px;
+    font-size: 5rem;
+    padding-left: 8px;
+    position: relative;
+    top: -2px;
   }
 /* Github section */
   .github-section {
@@ -310,16 +413,29 @@ p {
 
 .connected .text, .connected .with {
   text-align: center;
-  font-size: 75px;
   margin: 10px;
-  animation-name: zoom;
+}
+
+.connected .text {
+  animation-name: zoomSmall;
   animation-duration: 1s;
   animation-fill-mode: forwards;
 }
 
-@keyframes zoom {
-  0% {font-size: 50px; opacity: 0.3;}
-  100% {font-size: 60px; opacity: 1;}
+.connected .with {
+  animation-name: zoomBig;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes zoomSmall {
+  0% {font-size: 4.5rem; opacity: 0.3;}
+  100% {font-size: 5.5rem; opacity: 1;}
+}
+
+@keyframes zoomBig {
+  0% {font-size: 5.5rem; opacity: 0.3;}
+  100% {font-size: 6.5rem; opacity: 1;}
 }
 
 @keyframes fade {
@@ -346,6 +462,20 @@ p {
   color: white;
 }
 
+.github-connected .btn {
+  background-color: white;
+}
+
+@media only screen and (max-width: 768px) {
+  .connected {
+    margin-left: 0;
+  }
+
+  .connected .screen {
+    text-align: center;
+  }
+}
+
 /* Header */
 .header .menu-icon {
   display: none;
@@ -365,13 +495,13 @@ p {
   justify-content: space-between;
   width: 85%;
   text-align: center;
+  list-style-type: none;
 }
 
 .header .item {
-  margin: 0 4%;
+  margin: 0 10px;
   padding: 15px;
-  list-style-type: none;
-  font-size: 32px;
+  font-size: 3.2rem;
   color: #E3FE8F;
   border: 2px solid #E3FE8F;
   border-radius: 20px;
@@ -384,21 +514,43 @@ p {
 }
 
 .header .logo {
-  list-style-type: none;
-  font-size: 55px;
+  width: 35rem;
   margin: 0;
 }
 
 .header .page-on {
   background-color: rgb(0, 43, 53);
 }
+
+@media only screen and (min-width: 1900px) {
+  .header ul {
+    width: calc(1800px + 3%);
+  }
+}
+
+@media only screen and (max-width: 1350px) {
+  .header ul {
+    width: 95%;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .header .item {
+    font-size: 2rem;
+  }
+
+  .header .logo {
+    width: 25rem;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   .header .menu-icon {
     display: block;
     position: absolute;
     right: 10px;
-    top: 10px;
-    width: 50px;
+    top: 1%;
+    width: 15%;
   }
 
   .header ul {
@@ -423,10 +575,8 @@ p {
   }
 
   .header .logo {
-    text-align: center;
-    font-size: 48px;
-    width: calc(100% - 50px);
-    margin-left: 3%;
+    width: calc(85% - 50px);
+    margin: 10px 10% 10px -7.5%;
   }
 }
 
@@ -437,7 +587,7 @@ p {
   padding-left: 35px;
   margin-bottom: 12px;
   cursor: pointer;
-  font-size: 22px;
+  font-size: 2.2rem;
   user-select: none;
 }
 .checkbox-container input {
@@ -483,7 +633,7 @@ p {
 
 #checkbox-text {
   color: #1DA1F2;
-  font-size: 16px;
+  font-size: 1.6rem;
 }
 #checkbox-text span {
   vertical-align: middle;

@@ -20,7 +20,7 @@ export default function ConnectSection(props) {
                         <label htmlFor={`${set.name}-username-input`}>
                             <h3>Your {set.displayName} {set.usernameName}</h3>
                         </label>
-                        <div>
+                        <div className="input-container">
                             {set.specialInputField}
                             <input type="text" name="username" id={`${set.name}-username-input`}
                                 className="input" onChange={updateField} />
@@ -28,11 +28,11 @@ export default function ConnectSection(props) {
                         <button className="section-btn">Connect</button>
 
                         { (set.name === "twitter") &&
-                        <label className="checkbox-container">
-                            <p id="checkbox-text"><span>Give me a chance to become featured developer of the day.</span></p>
-                            <input type="checkbox" defaultChecked={agreeToFeture}/>
-                            <span className="checkmark"></span>
-                        </label>
+                            <label className="checkbox-container">
+                                <p id="checkbox-text"><span>Give me a chance to become featured developer of the day.</span></p>
+                                <input type="checkbox" defaultChecked={agreeToFeture}/>
+                                <span className="checkmark"></span>
+                            </label>
                         }
                         <p className="error-msg" key={errorMsg}>{connectedTo.errorMsg ? connectedTo.errorMsg : ""}</p>
                     </form>
