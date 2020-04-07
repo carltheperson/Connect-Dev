@@ -7,5 +7,8 @@ The site is made with React, and the backend is made with Express and Mongodb.
 ## Contributing
 This is my first React project and I properly didn't do a perfect job, so if you think you can improve something, create a pull request and I will review it. Thank you in advance.
 
+## Issues
+If you encounter something wrong with the website, then please open up an issue here on GitHub.
+
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
