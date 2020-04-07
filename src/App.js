@@ -11,27 +11,29 @@ import About from './components/About';
 import Footer from './components/Footer';
 
 
+
 function App() {
+
   return (
     <Router>
-      <div className="App">
-        <Header/>
+        <div className="App">
+          <Header/>
 
-        <Route exact path="/">
-          <MainSection/>
-          <Sections/>
-        </Route>
+          <Route exact path="/">
+            <MainSection/>
+            <Sections/>
+          </Route>
 
-        <Route exact path="/how-it-works">
-          <HowItWorks/>
-        </Route>
+          <Route exact path="/how-it-works">
+            <HowItWorks/>
+          </Route>
 
-        <Route exact path="/about">
-          <About/>
-        </Route>
+          <Route exact path="/about">
+            <About/>
+          </Route>
 
-        <Footer/>
-      </div>
+          <Footer/>
+        </div>
     </Router>
   );
 }

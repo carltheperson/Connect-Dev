@@ -9,7 +9,7 @@ export default function Footer() {
             <footer>
                 <p>Check out the Github repository for this project <br/>
                 <span className="smaller">(Only front-end for security reasons</span>)</p>
-                <img src={githubLogo} alt="Github logo" onClick={()=>window.location.href = "https://github.com/carlriis/Connect-Dev-io"}/>
+                <img src={githubLogo} alt="Github logo" onClick={()=>window.location.href = "https://github.com/carlriis/Connect-Dev"}/>
                 <div className="link-container">
                     <Link to="/">Connect</Link>
                     <Link to="/how-it-works">How it works</Link>

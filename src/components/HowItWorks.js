@@ -14,7 +14,7 @@ export default function HowItWorks() {
             <br/>
             <br/>
     
-            You can hear more about how the site is made on the <a href="https://github.com/carlriis/Connect-Dev-io">Github repository</a>.</p>
+            You can hear more about how the site is made on the <a href="https://github.com/carlriis/Connect-Dev">Github repository</a>.</p>
         </div>
     )
 }

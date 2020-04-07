@@ -6,6 +6,7 @@ body {
   background-color: #014A5B;
   font-family: 'Ubuntu', sans-serif;
   margin: 0;
+
 }
 
 h1, h2 {
@@ -17,6 +18,13 @@ p {
   color: #E3FE8F;
   font-size: 2rem;
 }
+
+.btn:hover, .section-btn:hover {
+  box-shadow: 0px 0px 14px 1px rgba(0,0,0,0.3);
+  animation: btn-zoom 0.5s;
+  cursor: pointer;
+}
+
 
 /* Pages */
 .page {
@@ -111,6 +119,12 @@ p {
   @media only screen and (min-width: 1900px) {
     #main-section {
       margin-left: 250px;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .title {
+      margin-top: 20px;
     }
   }
 
@@ -240,6 +254,7 @@ p {
 /* Sections */
 .section {
   padding: 50px 0 50px 100px;
+  box-shadow: 0px 0px 14px 1px rgba(0,0,0,0.5);
 }
 .section h1 {
   font-size: 7.2rem;
@@ -290,7 +305,7 @@ p {
 
 @media only screen and (max-width: 768px) {
   .section {
-    padding: 50px 5%;
+    padding: 25px 5%;
   }
 
   .section .icon {
@@ -349,7 +364,7 @@ p {
   .connectform-twitter .input {
     border: 4px #1DA1F2 solid;
     color: #1DA1F2;
-    padding-left: 6.5rem;
+    padding-left: 7rem;
     width: 300px;
   }
 
@@ -522,9 +537,9 @@ p {
   background-color: rgb(0, 43, 53);
 }
 
-@media only screen and (min-width: 1900px) {
+@media only screen and (min-width: 2000px) {
   .header ul {
-    width: calc(1800px + 3%);
+    width: calc(1750px + 4%);
   }
 }
 
@@ -564,6 +579,7 @@ p {
     width: 50%;
     margin: 20px auto;
     display: none;
+    font-size: 3.2rem;
   }
 
   .header .show-menu .item {

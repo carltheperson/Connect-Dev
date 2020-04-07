@@ -1,6 +1,6 @@
 const Config = {
-    hostname: "10.0.0.7:4000",
-    apiPort: 4000
+    hostname: "89.107.57.163:80",
+    apiPort: 80
 }
 
 module.exports = Config;
